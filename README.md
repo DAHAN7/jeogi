@@ -78,18 +78,9 @@
 
 ### 🎬 시연 영상 및 스크린샷
 
-* **프로젝트 시연 영상:** (YouTube 링크 첨부)
-* **주요 기능 스크린샷:**
+* **프로젝트 시연 영상:
 
-[Image of jeogi main page with attractive design]
-
-[Image of jeogi accommodation search with various filters]
-
-[Image of jeogi accommodation reservation process]
-
-[Image of jeogi real-time chat interface]
-
-
+* https://youtu.be/yL_szXPbzYc?si=mVwL7GG6zd-FZYpt
 ---
 
 **저는 국비 지원 교육 프로그램에서 배운 지식을 바탕으로 저기어때(jeogi)를 개발했습니다.** 
