@@ -49,6 +49,12 @@ public class ReviewServiceImpl implements ReviewService {
 		reviewDAO.update(review);
 		return "리뷰가 성공적으로 수정되었습니다.";
 	}
+	
+	@Override
+	public void update(ReviewVO rv) {
+		System.out.println("수정 : " + rv);
+		reviewDAO.updateContent(rv);
+	}
 
 	@Override
 	public String delete(int review_id) throws Exception {
@@ -112,4 +118,5 @@ public class ReviewServiceImpl implements ReviewService {
 		// TODO Auto-generated method stub
 
 	}
+
 }

@@ -9,6 +9,7 @@
         padding: 0;
         color: #333;
         line-height: 1.6;
+        padding-top:100px
     }
     .container {
         max-width: 900px;

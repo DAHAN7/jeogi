@@ -7,6 +7,7 @@ body {
     background-color: #f7f9fc;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
+    padding-top:100px;
 }
 .container {
     max-width: 800px;

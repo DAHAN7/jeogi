@@ -5,6 +5,7 @@
 body {
     font-family: 'Spoqa Han Sans Neo', 'sans-serif';
     background-color: #f5f5f5; /* 밝은 회색 배경 */
+    padding-top:100px;
 }
 
 .container {

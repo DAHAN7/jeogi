@@ -10,52 +10,69 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <style>
 .navbar {
-background-color:   
- #f8f9fa;
-padding: 1rem 2rem;
-font-family: 'Noto Sans KR', sans-serif;
+	background-color:   #f8f9fa;
+	padding: 1rem 2rem;
+	font-family: 'Noto Sans KR', sans-serif;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 .navbar-brand img {
-width: 150px;
+	width: 150px;
 }
+
 .nav-link {
-color: #343a40;
-font-weight: 700;
-border-bottom: 2px solid transparent;
-transition: border-color 0.3s ease, color 0.3s ease;
+	color: #343a40;
+	font-weight: 700;
+	border-bottom: 2px solid transparent;
+	transition: border-color 0.3s ease, color 0.3s ease;
 }
+
 .nav-link:hover, .nav-link:focus, .nav-link.active {
-border-color: #007bff;
-color: #007bff;
+	border-color: #007bff;
+	color: #007bff;
 }
+
+.nav-item {
+	margin-right: 1rem;
+}
+
 .btn-login {
-background-color: #007bff;
-color: #fff;
-border: none;
-margin-left: 1rem;
-transition: background-color 0.3s ease;
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	margin-left: 1rem;
+	transition: background-color 0.3s ease;
 }
+
 .btn-login:hover {
-background-color: #0069d9;
+	background-color: #0069d9;
 }
+
 .dropdown-menu {
-border-radius: 0;
-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+	border-radius: 0;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
+
 .dropdown-item {
-transition: background-color 0.3s ease;
+	transition: background-color 0.3s ease;
 }
+
 .dropdown-item:hover, .dropdown-item:focus {
-background-color: #f8f9fa;
+	background-color: #f8f9fa;
 }
-@media (max-width: 768px) {
-.navbar-nav {
-margin-top: 1rem;
-}
-.btn-login {
-margin-top: 1rem;
-margin-left: 0;
-}
+
+@media ( max-width : 768px) {
+	.navbar-nav {
+		margin-top: 1rem;
+	}
+	.nav-item {
+		margin-right: 0;
+		margin-bottom: 0.5rem;
+	}
+	.btn-login {
+		margin-top: 1rem;
+		margin-left: 0;
+	}
 }
 </style>
 </head>
@@ -79,8 +96,7 @@ margin-left: 0;
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav">
 					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="#"   
- id="infoDropdown"
+						class="nav-link dropdown-toggle" href="#" id="infoDropdown"
 						role="button" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false">   정보 </a>
 						<div class="dropdown-menu" aria-labelledby="infoDropdown">
@@ -106,9 +122,9 @@ margin-left: 0;
 					<li class="nav-item"><a class="nav-link"
 						href="${contextPath}/inquiry/list">문의 내역</a></li>
 					<li class="nav-item"><a class="nav-link"
-						href="${contextPath}/reservation/reservation">예약하기</a></li>
+						href="${contextPath}/reservation/reservation_list">예약하기</a></li>
 					<li class="nav-item"><a class="nav-link"
-						href="${contextPath}/accommodation/accommodation">숙소</a></li>
+						href="${contextPath}/accommodation/accommodation_list">숙소</a></li>
 				</ul>
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item dropdown"><c:choose>

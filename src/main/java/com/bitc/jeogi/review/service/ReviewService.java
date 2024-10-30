@@ -36,4 +36,6 @@ public interface ReviewService {
 	List<ReviewVO> getReviewsByAccommodation(int accommodationNum);
 
 	void write(ReviewVO vo);
+
+	void update(ReviewVO rv);
 }

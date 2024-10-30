@@ -4,11 +4,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="../common/header.jsp"%>
 <link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"rel="stylesheet">
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+	rel="stylesheet">
 <style>
 body {
 	font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 	background-color: #f5f5f5;
+	padding-top: 110px;
 }
 
 .container {
@@ -34,6 +36,24 @@ body {
 #submitButton:hover {
 	background-color: #0069d9; /* 더 진한 파란색 */
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 더 깊은 그림자 */
+}
+
+.accommodation-actions {
+	display: flex;
+	justify-content: center;
+	gap: 20px; /* 버튼 사이 간격 */
+}
+
+.accommodation-actions .btn {
+	padding: 10px 20px; /* 버튼 패딩 */
+	font-size: 1.1rem;
+	font-weight: 500;
+	transition: all 0.2s ease; /* 호버 효과 */
+}
+
+.accommodation-actions .btn:hover {
+	transform: translateY(-2px); /* 호버 시 위로 이동 */
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 호버 시 그림자 */
 }
 
 h1 {
@@ -225,18 +245,23 @@ form {
 		<div class="accommodation-actions my-4">
 			<a
 				href="${pageContext.request.contextPath}/accommodation/accommodation_update?accommodation_num=${accommodation.accommodation_num}"
-				class="btn btn-warning">수정</a>
+				class="btn btn-outline-warning"> <i class="bi bi-pencil-square"></i>
+				수정
+			</a>
 			<form
 				action="${pageContext.request.contextPath}/accommodation/accommodation_delete"
 				method="post" style="display: inline;">
 				<input type="hidden" name="accommodation_num"
-					value="${accommodation.accommodation_num}" /> <input type="submit"
-					value="삭제" class="btn btn-danger"
-					onclick="return confirm('정말 삭제하시겠습니까?');" />
+					value="${accommodation.accommodation_num}" />
+				<button type="submit" class="btn btn-outline-danger"
+					onclick="return confirm('정말 삭제하시겠습니까?');">
+					<i class="bi bi-trash"></i> 삭제
+				</button>
 			</form>
 			<a
 				href="${pageContext.request.contextPath}/accommodation/accommodation_list"
-				class="btn btn-secondary">목록으로 돌아가기</a>
+				class="btn btn-primary"> <i class="bi bi-list-ul"></i> 목록으로 돌아가기
+			</a>
 		</div>
 	</div>
 
@@ -316,19 +341,24 @@ form {
 	<%@ include file="accommodationreview.jsp"%>
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script>
-	$(document).ready(function() {
-		  // 숫자 입력 필드 변경 시 별점 변경
-		  $("#rating").change(function() {
-		    let rating = $(this).val();
-		    $("input[name='rating1'][value='" + rating + "']").prop('checked', true);
-		  });
+		$(document).ready(
+				function() {
+					// 숫자 입력 필드 변경 시 별점 변경
+					$("#rating").change(
+							function() {
+								let rating = $(this).val();
+								$(
+										"input[name='rating1'][value='"
+												+ rating + "']").prop(
+										'checked', true);
+							});
 
-		  // 별점 클릭 시 숫자 입력 필드 변경
-		  $("input[name='rating1']").change(function() {
-		    let rating = $(this).val();
-		    $("#rating").val(rating);
-		  });
-		});
+					// 별점 클릭 시 숫자 입력 필드 변경
+					$("input[name='rating1']").change(function() {
+						let rating = $(this).val();
+						$("#rating").val(rating);
+					});
+				});
 
 		$("#submitButton").click(function() {
 			console.log("버튼 클릭");

@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="common/header.jsp"%>
-<%@ include file="/WEB-INF/views/common/header.jsp" %>
+
 <head>
     <meta charset="UTF-8">
-    <title>여기어때 회원 문의 채팅페이지</title>
+    <title>저기어때 회원 문의 채팅페이지</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -12,6 +12,7 @@
             margin: 0;
             padding: 20px;
             color: #333;
+             padding-top: 100px; 
         }
         
         h1 {
@@ -81,7 +82,7 @@
 </head>
 <body>
 <div>
-    <h1>여기어때 회원 문의 채팅페이지  ${userInfo.u_name}</h1>
+    <h1>저기어때 회원 문의 채팅페이지  ${member.member_name}</h1>
     <div class="chatBox" id="data">
         <!-- 채팅 내용 출력 -->
     </div>

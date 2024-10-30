@@ -2,20 +2,19 @@ package com.bitc.jeogi.accommodation.controller;
 
 import java.util.List;
 
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.bitc.jeogi.accommodation.vo.CommentVO;
 import com.bitc.jeogi.review.service.ReviewService;
 import com.bitc.jeogi.review.vo.ReviewVO;
 
@@ -64,20 +63,21 @@ public class ReviewRestController {
 	public ResponseEntity<String> updateReview(
 			@PathVariable(name = "review_id") 
 			int review_id,
-			CommentVO vo
+			ReviewVO rv
 			) {
-		System.out.println("eewjofhofewhqofehqwonweo");
-		System.out.println(vo);
-		ReviewVO rv = null;
-		MultipartFile file = null;
+		System.out.println(rv);
+//		ReviewVO rv = null;
+//		MultipartFile file = null;
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("Content-Type","text/plain;charset=utf-8");
 		try {
 			rv.setReview_id(review_id); // 수정할 리뷰 ID 설정
-			rs.update(rv, file); // 파일 업로드를 포함한 리뷰 수정 처리
+			rs.update(rv); // 파일 업로드를 포함한 리뷰 수정 처리
 			log.info("리뷰가 성공적으로 수정되었습니다: {}", rv);
-			return ResponseEntity.ok("리뷰가 성공적으로 수정되었습니다.");
+			return ResponseEntity.status(200).headers(headers).body("리뷰가 성공적으로 수정되었습니다.");
 		} catch (Exception e) {
 			log.error("리뷰 수정 중 오류 발생: ", e);
-			return ResponseEntity.status(500).body("리뷰 수정 중 오류가 발생했습니다.");
+			return ResponseEntity.status(500).headers(headers).body("리뷰 수정 중 오류가 발생했습니다.");
 		}
 	}
 

@@ -6,6 +6,7 @@ body {
     background-color: #f0f4f8;
     font-family: 'Helvetica Neue', Arial, sans-serif;
     color: #333;
+    padding-top:100px;
 }
 
 /* 카드 스타일 */

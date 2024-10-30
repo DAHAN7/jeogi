@@ -6,6 +6,7 @@
 body {
 	font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 	background-color: #f5f5f5;
+	padding-top:100px;
 }
 
 .container {

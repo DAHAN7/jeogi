@@ -10,6 +10,7 @@
             margin: 0;
             padding: 20px;
             color: #333;
+            padding:120px;
         }
         .container {
             max-width: 800px;

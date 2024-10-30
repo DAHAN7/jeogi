@@ -29,7 +29,8 @@ public class AccommodationController {
 	private final AccommodationService as;
 
 	@GetMapping("accommodation")
-	public void accommodation() {
+	public String redirectToAccommodationList() {
+		return "redirect:/accommodation/accommodation_list";
 	}
 
 	@GetMapping("accommodation_detail")
@@ -39,12 +40,12 @@ public class AccommodationController {
 
 		if (vo == null) {
 			System.out.println("Error: Accommodation not found for number: " + accommodation_num);
-			return "error"; // 적절한 에러 페이지로 리다이렉트
+			return "error";
 		}
 
-		System.out.println("vo: " + vo); // vo가 null이 아닐 경우 출력
+		System.out.println("vo: " + vo); 
 		model.addAttribute("accommodation", vo);
-		return "accommodation/accommodation_detail"; // JSP 파일 경로
+		return "accommodation/accommodation_detail";
 	}
 
 	@GetMapping("accommodation_list")

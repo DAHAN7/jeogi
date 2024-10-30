@@ -1,8 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="/WEB-INF/views/common/header.jsp" %>
+<%@ include file="../common/header.jsp" %>
     <title>로그인</title>
-</head>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 

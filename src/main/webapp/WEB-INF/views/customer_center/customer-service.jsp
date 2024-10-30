@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
-<html>
+<%@ include file="../common/header.jsp"%>
 <head>
     <title>고객상담센터</title>
     <style>
@@ -9,6 +8,7 @@
             margin: 0;
             padding: 20px;
             background-color: #f4f4f4;
+                 padding-top: 100px; 
         }
         h1 {
             color: #333;
@@ -55,3 +55,4 @@
     </div>
 </body>
 </html>
+<%@ include file="../common/footer.jsp"%>

@@ -1,7 +1,11 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="../common/header.jsp"%>
-
+<style>
+body{
+padding-top:100px;
+}
+</style>
 <div class="container my-5">
     <h1 class="text-center mb-4">숙소 추가</h1>
     <form action="accommodation_writer" method="post" enctype="multipart/form-data">

@@ -6,6 +6,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="${path}/css/style.css"> 
 </head>
+<style>
+body{
+padding-top:100px;
+}
+</style>
 <body>
     <div class="container">
         <h2>문의 수정</h2>

@@ -161,7 +161,7 @@ footer {
         <div class="container">
             <h1>여기어때, 당신의 여행을 위한 최고의 선택</h1>
             <p>국내 숙소, 해외 숙소, 항공권, 렌터카, 티켓까지!</p>
-            <a href="${path}/reservation/reservation" class="btn btn-primary">숙소 예약하기</a>
+            <a href="${path}/reservation/reservation_list" class="btn btn-primary">숙소 예약하기</a>
         </div>
     </section>
 

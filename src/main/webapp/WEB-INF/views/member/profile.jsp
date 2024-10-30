@@ -16,6 +16,7 @@ body {
   background-color: #f8f9fa;
   flex-direction: column; /* 컨텐츠를 세로로 정렬 */
   gap: 10px; /* 요소 사이 간격 */
+  padding-top:150px;
 }
 
 .container {
@@ -125,4 +126,3 @@ a:hover {
     </c:if>
 </body>
 </html>
-

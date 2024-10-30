@@ -1,8 +1,12 @@
-<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html;charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ include file="/WEB-INF/views/common/header.jsp" %>
+<%@ include file="/WEB-INF/views/common/header.jsp"%>
 
 <style>
+body{
+padding-top:100px;
+}
 .card {
 	transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -77,11 +81,9 @@
 	margin-bottom: 3rem;
 }
 
-.page-item{
+.page-item {
 	display: inline-block;
-	
 }
-
 </style>
 
 <div class="container my-5">
@@ -93,17 +95,20 @@
 				<div class="card shadow-sm rounded">
 					<c:choose>
 						<c:when test="${not empty review.images}">
-							<img src="${contextPath}/displayFile?fileName=${review.images}" alt="리뷰 이미지" class="card-img-top"
+							<img src="${contextPath}/displayFile?fileName=${review.images}"
+								alt="리뷰 이미지" class="card-img-top"
 								style="height: 200px; object-fit: cover;">
 						</c:when>
 						<c:otherwise>
-							<img src="${contextPath}/resources/default-image.png" alt="기본 이미지" class="card-img-top"
+							<img src="${contextPath}/resources/default-image.png"
+								alt="기본 이미지" class="card-img-top"
 								style="height: 200px; object-fit: cover;">
 						</c:otherwise>
 					</c:choose>
 					<div class="card-body">
 						<h5 class="card-title">리뷰 ID: ${review.review_id}</h5>
-						<h6 class="card-subtitle mb-2 text-muted">작성자 ID: ${review.member_num}</h6>
+						<h6 class="card-subtitle mb-2 text-muted">작성자 ID:
+							${review.member_num}</h6>
 						<p class="card-text">내용: ${review.content}</p>
 						<c:forEach var="i" begin="1" end="5">
 							<c:choose>
@@ -111,22 +116,22 @@
 									<span class="filled">★</span>
 								</c:when>
 								<c:otherwise>
-									<span>☆</span> 
+									<span>☆</span>
 								</c:otherwise>
 							</c:choose>
 						</c:forEach>
 					</div>
-						<p class="card-text text-muted">작성일: ${review.created_at}</p>
-						<div class="d-flex justify-content-end">
-							<a href="#" class="btn btn-primary"
-								onclick="detail(${review.review_id})">자세히 보기</a>
-						</div>
+					<p class="card-text text-muted">작성일: ${review.created_at}</p>
+					<div class="d-flex justify-content-end">
+						<a href="#" class="btn btn-primary"
+							onclick="detail(${review.review_id})">자세히 보기</a>
 					</div>
 				</div>
-			</c:forEach>
-		</div>
+			</div>
+		</c:forEach>
 	</div>
-	<div class="container">
+</div>
+<div class="container">
 	<ul class="pagination justify-content-center">
 		<c:if test="${pm.prev}">
 			<li class="page-item"><a class="page-link"
@@ -135,9 +140,8 @@
 		<c:forEach var="i" begin="${pm.startPage}" end="${pm.endPage}">
 			<c:choose>
 				<c:when test="${pm.cri.page eq i}">
-				 <li class="page-item ${pm.cri.page == i ? 'active' : ''}">
-        <a class="page-link" href="?page=${i}">${i}</a>
-					</li>
+					<li class="page-item ${pm.cri.page == i ? 'active' : ''}"><a
+						class="page-link" href="?page=${i}">${i}</a></li>
 				</c:when>
 				<c:otherwise>
 					<li class="page-item"><a class="page-link" href="?page=${i}">${i}</a>
@@ -151,10 +155,10 @@
 		</c:if>
 	</ul>
 </div>
-	<div class="text-center my-4">
-		<a href="${pageContext.request.contextPath}/review/write"
-			class="btn btn-primary">리뷰 작성하기</a>
-	</div>
+<div class="text-center my-4">
+	<a href="${pageContext.request.contextPath}/review/write"
+		class="btn btn-primary">리뷰 작성하기</a>
+</div>
 
 </div>
 

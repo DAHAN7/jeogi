@@ -5,6 +5,7 @@
 body {
     background-color: #f8f9fa;
     font-family: 'Arial', sans-serif;
+    padding-top:100px;
 }
 .card {
     border-radius: 15px;

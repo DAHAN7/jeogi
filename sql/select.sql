@@ -5,7 +5,7 @@ SELECT * FROM accommodation;
 SELECT * FROM review;
 
 SELECT * FROM reservation ORDER BY reservation_num DESC LIMIT 0, 10;
-
+select * from member;
 
 select * from inquiry;
 

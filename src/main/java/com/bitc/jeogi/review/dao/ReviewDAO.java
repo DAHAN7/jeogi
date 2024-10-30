@@ -26,6 +26,9 @@ public interface ReviewDAO {
 	// 리뷰 업데이트
 	@Update("UPDATE review SET rating = #{rating}, content = #{content}, images = #{images} WHERE review_id = #{review_id}")
 	void update(ReviewVO review);
+	
+	@Update("UPDATE review SET  content = #{content} WHERE review_id = #{review_id}")
+	void updateContent(ReviewVO rv);
 
 	// 리뷰 삭제
 	@Delete("DELETE FROM review WHERE review_id = #{review_id}")
@@ -59,4 +62,6 @@ public interface ReviewDAO {
 	// 특정 숙소에 대한 리뷰 조회
 	@Select("SELECT * FROM review WHERE accommodation_num = #{accommodation_num} ORDER BY created_at DESC")
 	List<ReviewVO> getReviewsByAccommodation(int accommodation_num);
+
+	
 }

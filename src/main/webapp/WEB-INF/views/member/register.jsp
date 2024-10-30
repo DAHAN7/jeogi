@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="/WEB-INF/views/common/header.jsp" %>
+<%@ include file="../common/header.jsp" %>
 
     <title>회원 가입</title>
 </head>
@@ -17,6 +17,7 @@ body {
   background-color: #f8f9fa;
   flex-direction: column;
   gap: 10px;
+  padding-top:150px;
 }
 
 .container {
@@ -138,4 +139,3 @@ button[type="submit"]:hover {
     </div>
 </body>
 </html>
-<%@ include file="../common/footer.jsp" %>
